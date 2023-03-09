@@ -11,6 +11,22 @@
 ">
 </head>
 <body>
+<div class="card-tools">
+    <form action="{{url("/list")}}" method="get">
+
+        <div class="input-group input-group-sm" style="width: 550px;">
+
+            <input type="text" value="{{app("request")->input("search")}}" name="search" class="form-control float-right" placeholder="Search">
+
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
 
 
 <table class="table">

@@ -8,12 +8,16 @@ use Illuminate\Http\Request;
 
 class BookControllner extends Controller
 {
-    public function list(){
+    public function list(Request $request){
+        $search = $request->get('search');
+        $title = $request->get("title");
 
-       $data=Book::orderBy('id','asc')->get();
+
+        $data = Book::BookFiler($title)->Search("%$search%")->orderBy('id','asc')->get();
 
 
-        return view('list',compact('data'));
+
+        return view('list',compact('data','title'));
 
     }
     //

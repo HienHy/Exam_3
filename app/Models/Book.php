@@ -20,4 +20,21 @@ class Book extends Model
     public function Author(){
         return $this->belongsTo(Book::class);
     }
+
+    public function scopeSearch($query,$search){
+        if ($search && $search !=""){
+
+            return $query -> where("title","like","%$search%");
+        }
+        return  $query;
+
+    }
+
+    public function scopeBookFiler($query,$title){
+        if ($title && $title !=0){
+            return $query->where("title",$title);
+
+        }
+        return $query;
+    }
 }
