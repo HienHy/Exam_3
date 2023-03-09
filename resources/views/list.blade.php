@@ -26,12 +26,16 @@
     </thead>
     <tbody>
     @foreach($data as $item)
+
+
     <tr>
 
         <th scope="row">{{$item->id}}</th>
         <td>{{$item->title}}</td>
         <td>{{$item->author_id}}</td>
-        <td>@{{$item->id}}</td>
+        <td>{{$item->ISBN}}</td>
+        <td>{{$item->pub_year}}</td>
+        <td>{{$item->available}}</td>
     </tr>
     @endforeach
     </tbody>
